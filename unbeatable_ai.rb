@@ -44,8 +44,8 @@ class UnbeatableAi
             move = open_spot
         elsif check_for_center(board)
             move = open_spot
-        elsif strategy_for_opposite_corner(board)
-            move = 1                
+        elsif strategy_opposite_corners(board)
+            move = open_spot
         elsif strategy1_for_empty_corner(board)
             move = open_spot
         else edge_space(board)
@@ -87,23 +87,26 @@ class UnbeatableAi
         end
     end
 
-    def strategy_for_opposite_corner(board)
-        if board[0]=="x" && board[8]=="x"
-                @open_spot = 1
-        end
-    end
     def strategy1_for_empty_corner(board)
         corners = [0, 8, 2, 6]
         corners.each do |corner|
-            # if corner[0]=="x" && corner[8]=="x"
-            #     @open_spot = 1
-            # end
             if board[corner] == " "
                 @open_spot = corner
                 break
             end
         end
     open_spot 
+    end
+
+    def strategy_opposite_corners(board)
+        opposite_corners = [0, 8] || [2, 6]
+        # opposites.each do |opposite|
+            if opposite_corners = 1
+                @open_spot = edge_space(board)
+                # break
+            end
+        # end
+    open_spot
     end
 
     def edge_space(board)

@@ -60,4 +60,20 @@ class TestUnbeatableAi < Minitest::Test
         assert_equal(4, player.get_move(["x"," "," "," "," "," "," "," ","x"]))
     end
 
+    def test_for_o_takes_edge_if_x_opposite_corners
+        player = UnbeatableAi.new("o")
+        assert_equal(1, player.get_move(["x", " ", " ", " ", "o", " ", " ", " ", "x"]))
+    end
+
+    def test_for_o_takes_edge_if_x_takes_other_corners
+        player = UnbeatableAi.new("o")
+        assert_equal(1, player.get_move([" ", " ", "x", " ", "o", " ", "x", " ", " "]))
+    end
+
+    def test_for_x_will_block_win
+        player = UnbeatableAi.new("x")
+        assert_equal(7, player.get_move(["x", "o", " ", " ", "o", " ", " ", " ", "x"]))
+    end 
+
+
 end
