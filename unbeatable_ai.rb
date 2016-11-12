@@ -65,7 +65,7 @@ class UnbeatableAI
         if board[4] == " "
             @open_spot = 4
         elsif board[4] == "x"
-            @open_spot = strategy1_for_empty_corner(board)                
+            @open_spot = strategy1_for_empty_corner(b)                
         end
     end
 
