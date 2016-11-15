@@ -83,7 +83,7 @@ class UnbeatableAI
     def strategy_opposite_corners(board)
         opposite_corners = [0, 8] || [2, 6]
         # opposites.each do |opposite|
-            if opposite_corners = 1
+            if opposite_corners == 1
                 @open_spot = edge_space(board)
                 # break
             end
