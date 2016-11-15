@@ -15,3 +15,11 @@ play_board = Board.new()
 get '/' do
     erb :home
 end
+
+get 'rules' do
+	erb :rules
+end
+
+get '/History' do
+	erb :history
+end
