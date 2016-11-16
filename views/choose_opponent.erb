@@ -1,12 +1,12 @@
-<%= player_1_name %>, who will you play against?
-<br>
-1   Human
-2   Random AI
-3   Sequential AI
-4   Unbeatable AI
+<br><%= player_1_name %>, you will be "x". Who will you play against?
+<br><br><br>
+1--Human <br>
+2--Random AI<br>
+3--Sequential AI<br>
+4--Unbeatable AI<br><br>
 
-<form method = "post" action = "choose_opponent">
-	<input type = "number" min = 1 max = 4 name = "opponent">
+<form method = "post" action = "opponent">
+	<input type = "number" min = 1 max = 4 name = "user_opponent" autofocus="autofocus" placeholder="1-4">
 <br>
 <input type = "submit">
 </form>
